@@ -56,6 +56,8 @@ public class DocumentVector {
 			List<String> linesList = Files.readAllLines(vectorFile.toPath(), Charset.defaultCharset());
 			for(String line : linesList)
 			{
+				line= line.toLowerCase();
+				line = line.replace('.', ' ');
 				addToVector(line , docVector);
 			}
 		} catch (IOException e) {
